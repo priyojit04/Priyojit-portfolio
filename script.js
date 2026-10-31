@@ -245,3 +245,48 @@ if (contactForm) {
 // Current year
 const currentYear = $("#currentYear");
 if (currentYear) currentYear.textContent = new Date().getFullYear();
+
+
+// =====================================
+// Invisible Portfolio Background Music
+// =====================================
+
+(() => {
+  const music = new Audio(
+    "./assets/background-music.mp3.mp3"
+  );
+
+  music.loop = true;
+  music.volume = 0.25;
+
+  let musicStarted = false;
+
+  function startMusic() {
+    if (musicStarted) return;
+
+    musicStarted = true;
+
+    music.play().catch(() => {
+      musicStarted = false;
+    });
+  }
+
+  // Start music on the visitor's first interaction
+  document.addEventListener("click", startMusic, {
+    once: true
+  });
+
+  // Stop music when visitor switches tabs
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      music.pause();
+    } else if (musicStarted) {
+      music.play().catch(() => {});
+    }
+  });
+
+  // Stop when leaving the page
+  window.addEventListener("pagehide", () => {
+    music.pause();
+  });
+})();
