@@ -13,7 +13,8 @@ A responsive, full-width, dark navy / neon-blue personal portfolio built with pl
 1. In VS Code choose **File → Open Folder** and select the extracted `Priyojit-Portfolio-EmailJS` folder.
 2. Open `index.html` and choose **Open with Live Server**.
 3. This project includes `.vscode/settings.json`, which sets Live Server to port **5501** so it does not reuse the old Smart Home Manager tab that was running on port 5500.
-4. The address should look like `http://127.0.0.1:5501/`.
+4. The address should look like `http://127.0.0.1:5501/`
+5. Live : ' https://priyojit04.github.io/Priyojit-portfolio/ '
 
 ## Folder structure
 
